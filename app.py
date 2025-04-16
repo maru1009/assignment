@@ -37,14 +37,15 @@ def analyze_url():
     if np.isnan(features_df).any():
         return jsonify({"error": "Invalid features. Some features could not be converted to numeric values."}), 400
 
+# Assuming `features_df` is the input feature DataFrame
     predictions = {
-        "RandomForest": "Okay" if int(random_forest.predict(features_df)[0]) == 1 else "Bad",
-        "DecisionTree": "Okay" if int(decision_tree.predict(features_df)[0]) == 1 else "Bad",
-        "SGD": "Okay" if int(sgd.predict(features_df)[0]) == 1 else "Bad",
-        "ExtraTrees": "Okay" if int(extra_trees.predict(features_df)[0]) == 1 else "Bad",
-        "AdaBoost": "Okay" if int(ada_boost.predict(features_df)[0]) == 1 else "Bad",
-        "ANN": "Okay" if ann.predict(features_df).flatten()[0] == 1 else "Bad",
-        "KNN": "Okay" if int(knn.predict(features_df)[0]) == 1 else "Bad",
+        "RandomForest": "Okay" if int(random_forest.predict(features_df)[0]) == 0 else "Bad",
+        "DecisionTree": "Okay" if int(decision_tree.predict(features_df)[0]) == 0 else "Bad",
+        "SGD": "Okay" if int(sgd.predict(features_df)[0]) == 0 else "Bad",
+        "ExtraTrees": "Okay" if int(extra_trees.predict(features_df)[0]) == 0 else "Bad",
+        "AdaBoost": "Okay" if int(ada_boost.predict(features_df)[0]) == 0 else "Bad",
+        "ANN": "Okay" if ann.predict(features_df).flatten()[0] == 0 else "Bad",
+        "KNN": "Okay" if int(knn.predict(features_df)[0]) == 0 else "Bad",
     }
 
     return jsonify(predictions) 

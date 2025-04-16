@@ -1,119 +1,231 @@
-/* Body and Container Styling */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* General Page Layout */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #FFFFFF;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.container {
-    margin-top: 50px;
-}
-
-/* Card Styling */
-.card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card-body {
-    padding: 40px;
-}
-
-/* Form Styling */
-.form-group label {
-    font-weight: bold;
-}
-
-.form-control {
-    border-radius: 8px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: bold;
+/* Header */
+.header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 15px 0;
     width: 100%;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Error message Styling */
-.text-danger {
-    font-size: 14px;
+.brand-name h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu li {
+    display: inline;
+}
+
+.navbar-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.navbar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    gap: 40px;
+}
+
+/* Left Side: Big Image */
+.left-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-side img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+/* Right Side: URL Form */
+.right-side {
+    flex: 1;
+    text-align: center;
+}
+
+/* Explanation Text */
+.explanation {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* URL Input */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Error Message */
+.error-message {
+    font-size: 0.9rem;
+    color: red;
+    display: none;
+    margin-top: 5px;
+}
+
+/* Submit Button */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
 }
 
 /* Results Section */
-#results {
-    display: none;
+.result-section {
     margin-top: 20px;
-}
-
-#overall-result {
-    font-size: 18px;
-    font-weight: bold;
     text-align: center;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
 }
 
-#output {
-    padding: 15px;
+.result-section h4{ 
+    font-size: 22px;
+
+}
+
+.alert {
+    font-size: 1rem;
+    text-align: center;
+}
+
+#output { 
+    font-size: 20px;
+
+}
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+.safe {
+    color: green;
+    font-weight: bold;
+}
+
+.danger {
+    color: red;
+    font-weight: bold;
+}
+/* Style for the result container */
+.result-container {
+    background-color: #f9f9f9;
+    padding: 20px;
     border-radius: 8px;
-    background-color: #ffffff;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Alert Styling for Success/Failure */
-.alert-success {
-    background-color: #28a745;
-    color: white;
-}
-
-.alert-danger {
-    background-color: #dc3545;
-    color: white;
-}
-
-.alert-info {
-    background-color: #17a2b8;
-    color: white;
-}
-
-/* Loading Spinner */
-#loading {
-    display: none;
-    margin-top: 20px;
+/* Text styling */
+.result-text {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: #333;
     text-align: center;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        margin-top: 30px;
-    }
-    
-    .card-body {
-        padding: 30px;
-    }
+/* Safe URL result style */
+.safe {
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+}
 
-    .form-control {
-        font-size: 14px;
-    }
+/* Dangerous URL result style */
+.danger {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
 
-    .btn-primary {
-        font-size: 16px;
-        padding: 12px;
-    }
+/* Error message style */
+.error-message {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ffe6e6;
+    border: 1px solid red;
+    border-radius: 5px;
+}
 
-    #overall-result, #output {
-        font-size: 14px;
-    }
+/* Optional: Add some spacing between the result and the page content */
+#output {
+    margin-top: 30px;
 }
